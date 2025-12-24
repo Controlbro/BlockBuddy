@@ -1,37 +1,37 @@
 {
     "site": {
-        "name": "CraftHost",
-        "logo": "https://seeklogo.com/images/M/minecraft-youtube-logo-448E10AC2B-seeklogo.com.png",
+        "name": "BlockBuddy",
+        "logo": "https://tbfmc.com/public/logo.png",
         "description": "Premium Minecraft Server Hosting",
         "tagline": "Start Your Minecraft Adventure Today",
         "preview_image": "https://builtbybit.com/attachments/craft-modified-png.890132/?variant=display",
         "contact": {
-            "email": "support@crafthost.com",
-            "phone": "(555) 123-4567"
+            "email": "support@blockbuddy.host",
+            "phone": "(810) 663-2541"
         },
 
-        "login_url": "https://client.host.com",
-        "start_server_url": "https://client.host.com",
+        "login_url": "https://client.blockbuddy.host",
+        "start_server_url": "https://client.blockbuddy.host",
 
 
         "social": {
-            "discord": "https://discord.gg/yourinvite",
-            "twitter": "https://twitter.com/yourhandle",
-            "github": "https://github.com/yourrepo"
+            "discord": "https://discord.gg/TqJhasfHYd",
+            "twitter": "https://x.com/BlockBuddy_Host",
+            "github": "https://github.com/Controlbro"
         },
         "plans": [
             {
-                "name": "Dirt",
+                "name": "Minecraft Hosting",
                 "link": "https://client.host.com/plan/dirt",
                 "icon": "cube",
-                "price": "5",
-                "ram": "2",
-                "players": "20",
+                "price": "1",
+                "ram": "1",
+                "players": "∞",
                 "features": [
-                    "2GB RAM",
-                    "20 Player Slots",
-                    "Basic Plugin Support",
-                    "24/7 Uptime",
+                    "$1/GB RAM",
+                    "Unlimited Player Slots",
+                    "Ryzen 9 7900 @ 3.7GHz",
+                    "1-click modpack and plugin installer",
                     "Instant Setup"
                 ]
                 
@@ -40,13 +40,13 @@
                 "name": "Iron",
                 "icon": "server",
                 "link": "https://client.host.com/plan/iron",
-                "price": "15",
-                "ram": "6",
-                "players": "50",
+                "price": "4",
+                "ram": "4",
+                "players": "∞",
                 "featured": true,
                 "features": [
-                    "6GB RAM",
-                    "50 Player Slots",
+                    "4GB RAM",
+                    "Unlimited Player Slots",
                     "Premium Plugins",
                     "Modpack Support",
                     "DDoS Protection",
@@ -255,4 +255,5 @@
             "minecraft-hover": "minecraft-hover 1s ease-in-out infinite"
         }
     }
+
 }
