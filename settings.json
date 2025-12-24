@@ -37,7 +37,7 @@
                 
             },
             {
-                "name": "Iron",
+                "name": "Iron (Recommended)",
                 "icon": "server",
                 "link": "https://client.host.com/plan/iron",
                 "price": "4",
@@ -255,4 +255,5 @@
     }
 
 }
+
 
