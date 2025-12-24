@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= site.name %> - <%= site.description %></title>
+    <link rel="icon" href="<%= site.logo %>" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:title" content="<%= site.name %>">
+    <meta property="og:description" content="<%= site.description %>">
+    <meta property="og:image" content="<%= site.preview_image %>">
+    <meta property="og:url" content="<%= site.url %>">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= site.name %>">
+    <meta name="twitter:description" content="<%= site.description %>">
+    <meta name="twitter:image" content="<%= site.preview_image %>">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        minecraft: ['Minecraft', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        minecraft: {
+                            green: '#44bd32',
+                            blue: '#3498db',
+                            gold: '#f1c40f',
+                            dark: '#1e272e',
+                            light: '#ecf0f1',
+                        },
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s ease-in-out infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'minecraft-hover': 'minecraft-hover 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'minecraft-hover': {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-5px) scale(1.05)' },
+                        }
+                    }
+                },
+            },
+        }
+
+        // Theme Toggle Function
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // Set Initial Theme
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-minecraft-light dark:bg-minecraft-dark text-gray-800 dark:text-white font-inter transition-colors duration-300">
+    <!-- Theme Toggle Button -->
+    <button 
+        onclick="toggleTheme()"
+        class="fixed bottom-4 right-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+    >
+        <i class="fas fa-sun dark:hidden text-yellow-500 text-xl"></i>
+        <i class="fas fa-moon hidden dark:block text-blue-400 text-xl"></i>
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <button 
+        id="mobileMenuBtn"
+        class="fixed top-4 right-4 z-50 md:hidden p-2 rounded-lg bg-gray-800/80 hover:bg-gray-700/80 transition-colors duration-300"
+    >
+        <i class="fas fa-bars text-xl"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 dark:bg-black/80 backdrop-blur-sm z-40 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="<%= site.logo %>" alt="<%= site.name %>" class="w-8 h-8">
+                    <span class="font-minecraft text-xl"><%= site.name %></span>
+                </div>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="font-minecraft hover:text-minecraft-green transition">Home</a></li>
+                    <li><a href="#plans" class="font-minecraft hover:text-minecraft-green transition">Plans</a></li>
+                    <li><a href="#features" class="font-minecraft hover:text-minecraft-green transition">Features</a></li>
+                    <li><a href="#contact" class="font-minecraft hover:text-minecraft-green transition">Contact</a></li>
+                </ul>
+                <div class="hidden md:flex space-x-4">
+                    <button class="px-4 py-2 font-minecraft bg-gray-700 hover:bg-gray-600 transition shadow-inner">
+                        <a href="<%= site.login_url %>">
+                            Login
+                        </a>
+                    </button>
+                    <button class="px-4 py-2 font-minecraft bg-minecraft-green hover:bg-green-600 transition shadow-inner">
+                        <a href="<%= site.start_server_url %>">
+                            Start Server
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-40 hidden transition-all duration-300">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="font-minecraft text-2xl hover:text-minecraft-green transition">Home</a>
+            <a href="#plans" class="font-minecraft text-2xl hover:text-minecraft-green transition">Plans</a>
+            <a href="#features" class="font-minecraft text-2xl hover:text-minecraft-green transition">Features</a>
+            <a href="#contact" class="font-minecraft text-2xl hover:text-minecraft-green transition">Contact</a>
+            <div class="space-y-4">
+                
+                <button class="w-full px-8 py-2 font-minecraft bg-gray-700 hover:bg-gray-600 transition">
+                    <a href="<%= site.login_url %>">
+                    Login
+                </a>
+                </button>
+            <a href="<%= site.start_server_url %>">
+                <button class="w-full px-8 py-2 font-minecraft bg-minecraft-green hover:bg-green-600 transition">
+                    <a href="<%= site.start_server_url %>">
+                    Start Server
+                </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-[url('/images/minecraft_bg.png')] bg-cover bg-center relative overflow-hidden">
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 pointer-events-none">
+            <img src="/images/diamond.png" alt="Diamond" class="absolute w-8 h-8 animate-float opacity-50 top-1/4 left-1/4">
+            <img src="/images/emerald.png" alt="Emerald" class="absolute w-8 h-8 animate-bounce-slow opacity-50 top-1/3 right-1/4">
+            <img src="/images/gold.png" alt="Gold" class="absolute w-8 h-8 animate-spin-slow opacity-50 bottom-1/4 left-1/3">
+        </div>
+
+        <div class="container mx-auto px-4 relative">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center bg-black/60 px-4 py-2 rounded-lg mb-6 hover:scale-105 transition-transform cursor-pointer group">
+                    <img src="/images/diamond.png" alt="Diamond" class="w-6 h-6 mr-2 group-hover:animate-spin-slow">
+                    <span class="font-minecraft group-hover:text-minecraft-blue transition-colors"><%= site.description %></span>
+                </div>
+                <h1 class="font-minecraft text-4xl md:text-6xl mb-6 animate-pulse-slow">
+                    <%= site.tagline %>
+                </h1>
+                
+
+                <!-- Quick Start Button -->
+                <button class="mt-8 px-8 py-4 font-minecraft bg-minecraft-green hover:bg-green-600 transition-colors rounded-lg transform hover:scale-105 transition-transform group">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-play mr-2 group-hover:animate-bounce"></i>
+                        <a href="<%= site.start_server_url %>">
+                            Start Your Server Now
+                        </a>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-16 scroll-mt-20">
+        <div class="container mx-auto px-4">
+            <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Choose Your Plan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <% site.plans.forEach(plan => { %>
+                    <div class="group bg-white/5 dark:bg-black/60 p-8 rounded-lg <%= plan.featured ? 'ring-2 ring-minecraft-gold transform scale-105' : '' %> hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-<%= plan.icon %> text-4xl mb-4 group-hover:text-minecraft-green transition-colors group-hover:animate-bounce-slow"></i>
+                            <h3 class="font-minecraft text-xl group-hover:text-minecraft-green transition-colors"><%= plan.name %> Plan</h3>
+                        </div>
+                        <div class="text-center mb-6">
+                            <span class="text-3xl font-bold group-hover:text-minecraft-green transition-colors">$<%= plan.price %></span>
+                            <span class="text-gray-400 dark:text-gray-500">/mo</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <% plan.features.forEach(feature => { %>
+                                <li class="flex items-center group/item">
+                                    <i class="fas fa-check text-minecraft-green mr-2 group-hover/item:animate-bounce"></i>
+                                    <span class="group-hover/item:text-minecraft-green transition-colors"><%= feature %></span>
+                                </li>
+                            <% }); %>
+                        </ul>
+                        <a href="<%= plan.link %>">
+                        <button class="w-full py-2 font-minecraft <%= plan.featured ? 'bg-minecraft-green hover:bg-green-600' : 'bg-gray-700 hover:bg-gray-600' %> transition-colors transform hover:scale-105"> 
+                            Select Plan
+                        </button>
+                        </a>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white/5 dark:bg-black/30 scroll-mt-20">
+        <div class="container mx-auto px-4">
+            <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Server Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <% site.features.forEach(feature => { %>
+                    <div class="group bg-white/5 dark:bg-black/60 p-8 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-<%= feature.icon %> text-4xl mb-4 text-minecraft-green group-hover:animate-bounce-slow"></i>
+                        <h3 class="font-minecraft text-xl mb-4 group-hover:text-minecraft-green transition-colors"><%= feature.title %></h3>
+                        <p class="text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-white transition-colors"><%= feature.description %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+<!-- Testimonials Section -->
+<section class="py-16 bg-white/5 dark:bg-black/20">
+    <div class="container mx-auto px-4">
+        <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">What Players Are Saying</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <% site.testimonials.forEach(testimonials => { %>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+                <div class="flex items-center mb-4">                       
+                    <img src="<%= testimonials.avatar %>" alt="<%= testimonials.name %>" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h3 class="font-minecraft"><%= testimonials.name %></h3>
+                        <p class="text-sm text-gray-400"><%= testimonials.role %></p>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300"><%= testimonials.quote %></p>
+            </div>
+
+
+
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-16 bg-minecraft-green/10">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <% site.statistics.forEach(statistic => { %>
+            <div class="p-6 rounded-lg bg-white/5 dark:bg-black/20 hover:transform hover:scale-105 transition-all duration-300">
+                <h3 class="font-minecraft text-4xl mb-2"><%= statistic.value %></h3>
+                <p class="text-gray-600 dark:text-gray-300"><%= statistic.label %></p>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modpacks Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Popular Modpacks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <% site.modpacks.forEach(modpack => { %>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+
+                <img src="<%= modpack.image %>" alt="<%= modpack.name %>" class="w-full rounded-mg h-32 object-contain mb-4">
+                <h3 class="font-minecraft text-xl mb-2"><%= modpack.name %></h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4"><%= modpack.description %></p>
+
+                <a href="<%= modpack.link %>" target="_blank">
+                <button class="w-full py-2 font-minecraft bg-gray-700 hover:bg-gray-600 transition-colors transform hover:scale-105">
+                    Install
+                </button>
+            </a>
+            </div>
+            <% }); %>
+
+        </div>
+    </div>
+</section>
+
+<!-- Hosting Features Section -->
+<section class="py-16 bg-white/5 dark:bg-black/20">
+    <div class="container mx-auto px-4">
+        <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Why Choose Us?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <div class="text-center">
+                    <i class="fas fa-rocket text-4xl mb-4 text-minecraft-green group-hover:animate-bounce-slow"></i>
+                    <h3 class="font-minecraft text-xl mb-2">Blazing Fast</h3>
+                    <p class="text-gray-600 dark:text-gray-300">High-performance servers with SSD storage for maximum speed.</p>
+                </div>
+            </div>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-4xl mb-4 text-minecraft-green group-hover:animate-bounce-slow"></i>
+                    <h3 class="font-minecraft text-xl mb-2">DDoS Protection</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Advanced protection against attacks to keep your server online.</p>
+                </div>
+            </div>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <div class="text-center">
+                    <i class="fas fa-globe text-4xl mb-4 text-minecraft-green group-hover:animate-bounce-slow"></i>
+                    <h3 class="font-minecraft text-xl mb-2">Global Locations</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Choose from multiple data center locations worldwide.</p>
+                </div>
+            </div>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <div class="text-center">
+                    <i class="fas fa-headset text-4xl mb-4 text-minecraft-green group-hover:animate-bounce-slow"></i>
+                    <h3 class="font-minecraft text-xl mb-2">24/7 Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Expert support team available around the clock.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Server Creation Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Create Your Server</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <a href="/#plans">
+                <div class="text-center">
+                    <i class="fas fa-cogs text-4xl mb-4 text-minecraft-green group-hover:animate-spin-slow"></i>
+                    <h3 class="font-minecraft text-xl mb-2">1. Choose Plan</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Select the perfect plan for your needs.</p>
+                </div>
+            </a>
+            </div>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <div class="text-center">
+                    <i class="fas fa-sliders-h text-4xl mb-4 text-minecraft-green group-hover:animate-bounce-slow"></i>
+                    <h3 class="font-minecraft text-xl mb-2">2. Configure</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Customize your server settings.</p>
+                </div>
+            </div>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300 group">
+                <div class="text-center">
+                    <i class="fas fa-play text-4xl mb-4 text-minecraft-green group-hover:animate-bounce"></i>
+                    <h3 class="font-minecraft text-xl mb-2">3. Play!</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Start playing with your friends instantly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Animated Progress Bar Section -->
+<section class="py-16 bg-white/5 dark:bg-black/20">
+    <div class="container mx-auto px-4">
+        <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Our Infrastructure</h2>
+        <div class="space-y-8">
+            <div class="group">
+                <div class="flex justify-between mb-2">
+                    <span class="font-minecraft">Server Uptime</span>
+                    <span class="font-minecraft">99.9%</span>
+                </div>
+                <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-minecraft-green animate-progress" style="width: 99.9%"></div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="flex justify-between mb-2">
+                    <span class="font-minecraft">Network Speed</span>
+                    <span class="font-minecraft">10 Gbps</span>
+                </div>
+                <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-minecraft-green animate-progress" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="flex justify-between mb-2">
+                    <span class="font-minecraft">Customer Satisfaction</span>
+                    <span class="font-minecraft">98%</span>
+                </div>
+                <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-minecraft-green animate-progress" style="width: 98%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16 bg-white/5 dark:bg-black/20">
+    <div class="container mx-auto px-4">
+
+        <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Frequently Asked Questions</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <% site.faq.forEach(faq => { %>
+            <div class="bg-white/5 dark:bg-black/60 p-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+                <h3 class="font-minecraft text-xl mb-2"><%= faq.question %></h3>
+                <p class="text-gray-600 dark:text-gray-300"><%= faq.answer %></p>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-16 bg-minecraft-green/10">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="font-minecraft text-3xl mb-6 animate-minecraft-hover">Ready to Start Your Adventure?</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join thousands of players and create your perfect Minecraft server today. With our easy setup and powerful features, you'll be playing in no time!
+        </p>
+        <button class="px-8 py-4 font-minecraft bg-minecraft-green hover:bg-green-600 transition-colors rounded-lg transform hover:scale-105 transition-transform group">
+            <span class="flex items-center justify-center">
+                <i class="fas fa-play mr-2 group-hover:animate-bounce"></i>
+                <a href="<%= site.start_server_url %>">
+                Get Started Now
+            </a>
+            </span>
+        </button>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-white/10 dark:bg-black/80 pt-16 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="group">
+                    <h3 class="font-minecraft text-xl mb-4 group-hover:text-minecraft-green transition-colors"><%= site.name %></h3>
+                    <p class="text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-white transition-colors"><%= site.description %></p>
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-minecraft-blue transition-colors hover:animate-bounce-slow">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-minecraft-blue transition-colors hover:animate-bounce-slow">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-minecraft-blue transition-colors hover:animate-bounce-slow">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="group">
+                    <h4 class="font-minecraft text-lg mb-4 group-hover:text-minecraft-green transition-colors">Contact</h4>
+                    <p class="flex items-center mb-2 hover:text-minecraft-blue transition-colors">
+                        <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
+                        <%= site.contact.email %>
+                    </p>
+                    <p class="flex items-center hover:text-minecraft-blue transition-colors">
+                        <i class="fas fa-phone mr-2 group-hover:animate-bounce"></i>
+                        <%= site.contact.phone %>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-gray-800">
+                <p class="text-gray-600 dark:text-gray-400">&copy; <%= year %> <%= site.name %> - All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-minecraft-dark z-50 flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <img src="<%= site.logo %>" alt="Loading" class="w-16 h-16 mx-auto animate-bounce-slow">
+            <h2 class="font-minecraft text-2xl mt-4 animate-pulse">Loading World...</h2>
+            <div class="w-64 h-4 bg-gray-800 rounded-full mt-4 overflow-hidden">
+                <div id="loadingBar" class="h-full bg-minecraft-green transition-all duration-300" style="width: 0%"></div>
+            </div>
+            <p id="loadingText" class="text-gray-400 mt-2 font-minecraft text-sm">Generating terrain...</p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+    <script>
+        // Loading Screen Animation
+        function updateLoadingScreen() {
+            const loadingBar = document.getElementById('loadingBar');
+            const loadingText = document.getElementById('loadingText');
+            const loadingScreen = document.getElementById('loadingScreen');
+            let progress = 0;
+
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                loadingBar.style.width = `${progress}%`;
+                loadingText.textContent = getLoadingText(progress);
+
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingScreen.classList.add('opacity-0');
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 500);
+                }
+            }, 200);
+
+            function getLoadingText(progress) {
+                if (progress < 20) return 'Generating terrain...';
+                if (progress < 40) return 'Spawning mobs...';
+                if (progress < 60) return 'Creating world...';
+                if (progress < 80) return 'Loading chunks...';
+                return 'Almost there...';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLoadingScreen();
+        });
+    </script>
+
+    <script>
+        // Force dark mode on page load
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+    </script>
+</body>
+</html>

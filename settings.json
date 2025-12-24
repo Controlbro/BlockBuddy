@@ -1,0 +1,258 @@
+{
+    "site": {
+        "name": "CraftHost",
+        "logo": "https://seeklogo.com/images/M/minecraft-youtube-logo-448E10AC2B-seeklogo.com.png",
+        "description": "Premium Minecraft Server Hosting",
+        "tagline": "Start Your Minecraft Adventure Today",
+        "preview_image": "https://builtbybit.com/attachments/craft-modified-png.890132/?variant=display",
+        "contact": {
+            "email": "support@crafthost.com",
+            "phone": "(555) 123-4567"
+        },
+
+        "login_url": "https://client.host.com",
+        "start_server_url": "https://client.host.com",
+
+
+        "social": {
+            "discord": "https://discord.gg/yourinvite",
+            "twitter": "https://twitter.com/yourhandle",
+            "github": "https://github.com/yourrepo"
+        },
+        "plans": [
+            {
+                "name": "Dirt",
+                "link": "https://client.host.com/plan/dirt",
+                "icon": "cube",
+                "price": "5",
+                "ram": "2",
+                "players": "20",
+                "features": [
+                    "2GB RAM",
+                    "20 Player Slots",
+                    "Basic Plugin Support",
+                    "24/7 Uptime",
+                    "Instant Setup"
+                ]
+                
+            },
+            {
+                "name": "Iron",
+                "icon": "server",
+                "link": "https://client.host.com/plan/iron",
+                "price": "15",
+                "ram": "6",
+                "players": "50",
+                "featured": true,
+                "features": [
+                    "6GB RAM",
+                    "50 Player Slots",
+                    "Premium Plugins",
+                    "Modpack Support",
+                    "DDoS Protection",
+                    "Daily Backups"
+                ]
+                
+            },
+            {
+                "name": "Diamond",
+                "icon": "gem",
+                "link": "https://client.host.com/plan/diamond",
+                "price": "30",
+                "ram": "12",
+                "players": "∞",
+                "features": [
+                    "12GB RAM",
+                    "Unlimited Players",
+                    "All Plugins Included",
+                    "Priority Support",
+                    "Custom Domain",
+                    "Advanced Statistics"
+                ]
+                
+            }
+        ],
+        "features": [
+            {
+                "title": "One-Click Modpacks",
+                "description": "Install popular modpacks with a single click",
+                "icon": "download"
+            },
+            {
+                "title": "DDoS Protection",
+                "description": "Advanced protection against attacks",
+                "icon": "shield-alt"
+            },
+            {
+                "title": "24/7 Support",
+                "description": "Expert Minecraft support team",
+                "icon": "headset"
+            }
+        ],
+        "testimonials": [
+            {
+                "name": "Steve",
+                "role": "Minecraft Veteran",
+                "avatar": "https://i.pinimg.com/1200x/85/78/bf/8578bfd439ef6ee41e103ae82b561986.jpg",
+                "quote": "Best hosting I've ever used! The performance is amazing and the support team is super helpful."
+            },
+            {
+                "name": "Alex",
+                "role": "Redstone Engineer",
+                "avatar": "https://i.pinimg.com/564x/a9/a4/ec/a9a4ec03fa9afc407028ca40c20ed774.jpg",
+                "quote": "The one-click modpack installation is a game-changer! So easy to set up."
+            },
+            {
+                "name": "Herobrine",
+                "role": "Mysterious Entity",
+                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjbgkLBAe9Yk7n6KMjafXPz5y8mKvEjyxjuw&s",
+                "quote": "Even I can't crash these servers. Impressive stability!"
+            }
+        ],
+        "statistics": [
+            {
+                "value": "99.9%",
+                "label": "Uptime"
+            },
+            {
+                "value": "24/7",
+                "label": "Support"
+            },
+            {
+                "value": "1-Click",
+                "label": "Setup"
+            },
+            {
+                "value": "∞",
+                "label": "Possibilities"
+            }
+        ],
+        "modpacks": [
+            {
+                "name": "Technic Pack",
+                "link":"https://www.technicpack.net",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpP_mlBs0HhRUKjOo4MyjikzOPRio9bU3c6g&s",
+                "description": "The classic modpack with all your favorite mods."
+            },
+            {
+                "name": "Feed The Beast",
+                "link":"https://www.feed-the-beast.com/modpacks",
+                "image": "https://i.ytimg.com/vi/LQP-CS4dKnE/hqdefault.jpg",
+                "description": "The ultimate tech and magic experience."
+            },
+            {
+                "name": "RLCraft",
+                "link":"https://www.curseforge.com/minecraft/modpacks/rlcraft",
+                "image": "https://bisecthosting.com/images/CF/RLCraft/BH_RL_Header.webp",
+                "description": "The ultimate survival challenge."
+            }
+        ],
+        "faq": [
+            {
+                "question": "How do I install mods?",
+                "answer": "You can easily install mods through our one-click modpack installer or upload your own mods through our control panel."
+            },
+            {
+                "question": "Can I upgrade my plan later?",
+                "answer": "Yes, you can upgrade your plan at any time through your account dashboard."
+            },
+            {
+                "question": "Do you offer backups?",
+                "answer": "Yes, we offer automatic daily backups and manual backup options."
+            },
+            {
+                "question": "What versions of Minecraft do you support?",
+                "answer": "We support all versions of Minecraft from 1.8 to the latest release."
+            }
+        ],
+        "hosting_features": [
+            {
+                "title": "Blazing Fast",
+                "description": "High-performance servers with SSD storage for maximum speed.",
+                "icon": "rocket"
+            },
+            {
+                "title": "DDoS Protection",
+                "description": "Advanced protection against attacks to keep your server online.",
+                "icon": "shield-alt"
+            },
+            {
+                "title": "Global Locations",
+                "description": "Choose from multiple data center locations worldwide.",
+                "icon": "globe"
+            },
+            {
+                "title": "24/7 Support",
+                "description": "Expert support team available around the clock.",
+                "icon": "headset"
+            }
+        ],
+        "infrastructure": [
+            {
+                "label": "Server Uptime",
+                "value": "99.9%"
+            },
+            {
+                "label": "Network Speed",
+                "value": "10 Gbps"
+            },
+            {
+                "label": "Customer Satisfaction",
+                "value": "98%"
+            }
+        ]
+    },
+    "server": {
+        "port": 3000,
+        "demo_server": {
+            "ip": "play.crafthost.com",
+            "version": "1.20.1",
+            "online": 42,
+            "uptime": "99.9%",
+            "status": "Online",
+            "max_players": 100,
+            "location": "New York, USA",
+            "ping": "12ms"
+        },
+        "locations": [
+            {
+                "name": "US East",
+                "ping": "12ms"
+            },
+            {
+                "name": "US West",
+                "ping": "18ms"
+            },
+            {
+                "name": "Europe",
+                "ping": "28ms"
+            },
+            {
+                "name": "Asia",
+                "ping": "45ms"
+            }
+        ]
+    },
+    "theme": {
+        "colors": {
+            "primary": "#44bd32",
+            "secondary": "#3498db",
+            "accent": "#f1c40f",
+            "background": "#1e272e",
+            "text": "#ffffff",
+            "dark": "#1e272e",
+            "light": "#ecf0f1"
+        },
+        "fonts": {
+            "main": "Minecraft",
+            "fallback": "Inter"
+        },
+        "animations": {
+            "float": "float 3s ease-in-out infinite",
+            "bounce-slow": "bounce 3s ease-in-out infinite",
+            "spin-slow": "spin 8s linear infinite",
+            "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            "minecraft-hover": "minecraft-hover 1s ease-in-out infinite"
+        }
+    }
+}
