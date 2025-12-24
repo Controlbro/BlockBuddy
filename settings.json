@@ -29,7 +29,7 @@
                 "players": "∞",
                 "features": [
                     "1GB RAM",
-                    "Unlimited Player Slots",
+                    "Recommended 2+ Player Slots",
                     "Ryzen 9 7900 @ 3.7GHz",
                     "1-click modpack and plugin installer",
                     "Instant Setup"
@@ -37,7 +37,7 @@
                 
             },
             {
-                "name": "Iron (Recommended)",
+                "name": "Iron",
                 "icon": "server",
                 "link": "https://client.host.com/plan/iron",
                 "price": "4",
@@ -46,7 +46,7 @@
                 "featured": true,
                 "features": [
                     "4GB RAM",
-                    "Unlimited Player Slots",
+                    "Recommended 20+ Player Slots",
                     "Ryzen 9 7900 @ 3.7GHz",
                     "1-click modpack and plugin installer",
                     "Instant Setup"
@@ -62,7 +62,7 @@
                 "players": "∞",
                 "features": [
                     "8GB RAM",
-                    "Unlimited Player Slots",
+                    "Recommended 30+ Player Slots",
                     "Ryzen 9 7900 @ 3.7GHz",
                     "1-click modpack and plugin installer",
                     "Instant Setup"
@@ -255,6 +255,7 @@
     }
 
 }
+
 
 
 
