@@ -9,7 +9,7 @@ import giraffe from '../assets/cta/giraffe.svg';
 
 export default function Cta() {
   return (
-    <section className="relative pt-32 pb-20 bg-cream overflow-hidden font-pixelify">
+    <section id="contact" className="relative pt-32 pb-20 bg-cream overflow-hidden font-pixelify">
       
       {/* --- SCENE CONTAINER --- */}
       <div className="mx-auto w-full max-w-6xl relative h-[600px] flex flex-col items-center justify-end">
@@ -59,23 +59,23 @@ export default function Cta() {
 
             {/* TITLE */}
             <h2 className="text-3xl sm:text-5xl font-bold text-[var(--color-navy-900)] mb-4 tracking-tight">
-                Ready to Start Your Adventure?
+                Ready to Launch with BlockBuddy?
             </h2>
 
             {/* DESCRIPTION */}
             <p className="text-slate-500 font-sans text-lg max-w-lg mx-auto mb-10 leading-relaxed">
-                Join Moonveil today and experience Minecraft survival like never before. 
-                Build, trade, and conquer in a world without limits.
+                Spin up your Minecraft server or VPS today and scale as your community grows.
+                Simple pricing, powerful hardware, and real human support.
             </p>
 
             {/* GET STARTED BUTTON */}
             <a 
-                href="https://play.moonveil.net" 
+                href="#plans" 
                 className="group relative flex w-full max-w-2xl mx-auto items-center justify-between gap-5 overflow-hidden rounded-2xl px-8 py-6 sm:px-12 sm:py-8 bg-gradient-to-br from-[#FFEDE3] to-[#FFEBCC] hover:ring-4 hover:ring-orange-100 transition-all duration-300 shadow-xl shadow-orange-100/50"
             >
                 {/* Text */}
                 <div className="text-2xl sm:text-3xl font-bold text-[var(--color-navy-900)]">
-                    Get Started
+                    Explore Plans & Pricing
                 </div>
 
                 {/* Arrow Icon */}

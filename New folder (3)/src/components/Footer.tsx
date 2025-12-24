@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-16">
           <div className="max-w-xs">
             <div className="text-3xl font-bold text-[var(--color-navy-900)] tracking-tight mb-4">
-              Moonveil
+              BlockBuddy
             </div>
             <p className="text-slate-500 font-sans text-sm leading-relaxed">
-              The ultimate Minecraft survival experience. Join our community, build your empire, and conquer the world without limits.
+              Hosting for Minecraft communities and VPS workloads with simple pricing and dependable performance.
             </p>
           </div>
           <div className="flex flex-wrap gap-16 md:gap-24">
@@ -21,7 +21,7 @@ export default function Footer() {
               <h4 className="font-bold text-[var(--color-navy-900)] mb-6 text-lg">Navigation</h4>
               <ul className="space-y-4 font-sans text-sm font-medium text-slate-500">
                 <li><a href="#home" className="hover:text-[var(--color-gold-500)] transition-colors">Home</a></li>
-                <li><a href="#servers" className="hover:text-[var(--color-gold-500)] transition-colors">Servers</a></li>
+                <li><a href="#plans" className="hover:text-[var(--color-gold-500)] transition-colors">Plans</a></li>
                 <li><a href="#features" className="hover:text-[var(--color-gold-500)] transition-colors">Features</a></li>
                 <li><a href="#reviews" className="hover:text-[var(--color-gold-500)] transition-colors">Reviews</a></li>
               </ul>
@@ -29,10 +29,10 @@ export default function Footer() {
             <div>
               <h4 className="font-bold text-[var(--color-navy-900)] mb-6 text-lg">Support</h4>
               <ul className="space-y-4 font-sans text-sm font-medium text-slate-500">
-                <li><a href="https://store.moonveil.net" target="_blank" className="hover:text-[var(--color-gold-500)] transition-colors">Store</a></li>
-                <li><a href="https://vote.moonveil.net" target="_blank" className="hover:text-[var(--color-gold-500)] transition-colors">Vote</a></li>
-                <li><a href="#staff" className="hover:text-[var(--color-gold-500)] transition-colors">Staff Team</a></li>
-                <li><a href="mailto:support@moonveil.net" className="hover:text-[var(--color-gold-500)] transition-colors">Contact Us</a></li>
+                <li><a href="#plans" className="hover:text-[var(--color-gold-500)] transition-colors">Pricing</a></li>
+                <li><a href="#features" className="hover:text-[var(--color-gold-500)] transition-colors">Infrastructure</a></li>
+                <li><a href="#reviews" className="hover:text-[var(--color-gold-500)] transition-colors">Testimonials</a></li>
+                <li><a href="mailto:support@blockbuddy.host" className="hover:text-[var(--color-gold-500)] transition-colors">Contact Us</a></li>
               </ul>
             </div>
 
@@ -41,12 +41,12 @@ export default function Footer() {
         <div className="pt-8 border-t border-[var(--color-navy-900)]/5 flex flex-col-reverse md:flex-row justify-between items-center gap-6">
           
           <div className="text-slate-400 font-sans text-sm font-medium text-center md:text-left">
-            © 2025 Moonveil Network. All rights reserved.
+            © 2025 BlockBuddy Hosting. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
-            <SocialLink href="https://twitter.com/moonveil" icon={<XIcon />} label="Twitter/X" />
-            <SocialLink href="https://youtube.com/moonveil" icon={<YoutubeIcon />} label="YouTube" />
-            <SocialLink href="https://discord.gg/moonveil" icon={<DiscordIcon />} label="Discord" />
+            <SocialLink href="#" icon={<XIcon />} label="Twitter/X" />
+            <SocialLink href="#" icon={<YoutubeIcon />} label="YouTube" />
+            <SocialLink href="#contact" icon={<DiscordIcon />} label="Contact" />
           </div>
 
         </div>
@@ -57,11 +57,12 @@ export default function Footer() {
 }
 
 function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
+  const isExternal = href.startsWith('http');
   return (
     <a 
       href={href} 
-      target="_blank" 
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       aria-label={label}
       className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#1E293B]/5 text-[#1E293B] hover:bg-[var(--color-gold-500)] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
     >

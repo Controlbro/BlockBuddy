@@ -4,50 +4,50 @@ import survivalImage from '../assets/servers/survival.webp';
 import skyblockImage from '../assets/servers/skyblock.webp';
 import donutImage from '../assets/servers/donut.webp';
 import creativeImage from '../assets/servers/creative.webp';
-import { Globe, Cloud, Skull, Palette } from 'lucide-react';
+import { Boxes, Cloud, Cpu, ShieldCheck } from 'lucide-react';
 
 const servers = [
   {
-    name: "Survival Earth",
-    description: "Experience classic Survival gameplay with a balanced economy, land claiming, and a friendly community. Build your empire now!",
+    name: "Minecraft Hosting",
+    description: "Instant setup for Paper, Purpur, or Forge with modpack installers, backups, and easy file access.",
     image: survivalImage,
-    icon: <Globe className="w-6 h-6 text-[var(--color-gold-500)]" />,
-    players: 1240,
-    status: "online" as const,
-    tags: ["Economy", "PvE", "Quest"]
+    icon: <Boxes className="w-6 h-6 text-[var(--color-gold-500)]" />,
+    startingAt: "$1/GB",
+    availability: "AVAILABLE",
+    tags: ["Modpacks", "Backups", "Instant Deploy"]
   },
   {
-    name: "Skyblock Galaxy",
-    description: "Start with a single block in the sky and expand your island into a massive automated factory. Features minions and custom enchants!",
+    name: "VPS Hosting",
+    description: "Flexible virtual servers with full root access, NVMe SSDs, and scalable resources.",
     image: skyblockImage,
     icon: <Cloud className="w-6 h-6 text-[var(--color-gold-500)]" />,
-    players: 856,
-    status: "online" as const,
-    tags: ["Tycoon", "Grind", "Sky"]
+    startingAt: "$1.50/GB",
+    availability: "AVAILABLE",
+    tags: ["Root Access", "Linux Distros", "Snapshots"]
   },
   {
-    name: "Donut SMP",
-    description: "The most brutal Lifesteal SMP! Steal hearts from other players, griefing is allowed. Become the ultimate ruler of the server.",
+    name: "DDoS Protection",
+    description: "Always-on mitigation with smart routing to keep your communities online during attacks.",
     image: donutImage,
-    icon: <Skull className="w-6 h-6 text-[var(--color-gold-500)]" />,
-    players: 2300,
-    status: "online" as const,
-    tags: ["Lifesteal", "PvP", "Hardcore"]
+    icon: <ShieldCheck className="w-6 h-6 text-[var(--color-gold-500)]" />,
+    startingAt: "Included",
+    availability: "GUARANTEED",
+    tags: ["Layer 4/7", "Auto Mitigation", "Global Network"]
   },
   {
-    name: "Creative Plots",
-    description: "Unleash your creativity without limits. Huge plots, WorldEdit access, and weekly building contests with amazing rewards.",
+    name: "Dedicated Nodes",
+    description: "High-frequency CPUs and isolated resources for demanding networks and multi-server fleets.",
     image: creativeImage,
-    icon: <Palette className="w-6 h-6 text-[var(--color-gold-500)]" />,
-    players: 432,
-    status: "maintenance" as const,
-    tags: ["Build", "Art", "Contest"]
+    icon: <Cpu className="w-6 h-6 text-[var(--color-gold-500)]" />,
+    startingAt: "Custom",
+    availability: "LIMITED",
+    tags: ["Ryzen", "NVMe RAID", "Private VLAN"]
   }
 ];
 
 export default function Servers() {
   return (
-    <section id="servers" className="py-24 bg-cream relative overflow-hidden">
+    <section id="plans" className="py-24 bg-cream relative overflow-hidden">
       
       {/* Background Accents (Subtle) */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -60,13 +60,13 @@ export default function Servers() {
         {/* Section Title */}
         <div className="text-center mb-16 md:mb-24">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/50 text-orange-700 text-xs font-bold uppercase tracking-widest mb-4 border border-orange-200/50">
-            Our Gamemodes
+            BlockBuddy Plans
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-navy-900)] mb-4">
-            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold-500)] to-orange-600">Adventure</span>
+            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold-500)] to-orange-600">Hosting</span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-            We offer unique and exciting game modes for every type of player. Find your favorite way to play!
+            Transparent pricing, modern hardware, and support that actually responds. Pick the stack that fits your community.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Servers() {
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
              <Button variant="outlined" size="lg" className="border-slate-300 hover:border-[var(--color-gold-500)] hover:text-[var(--color-gold-500)] hover:bg-cream">
-                View All Servers
+                Compare All Plans
              </Button>
         </div>
 
