@@ -21,7 +21,7 @@
         },
         "plans": [
             {
-                "name": "Minecraft Hosting",
+                "name": "Dirt",
                 "link": "https://client.host.com/plan/dirt",
                 "icon": "cube",
                 "price": "1",
@@ -45,12 +45,11 @@
                 "players": "∞",
                 "featured": true,
                 "features": [
-                    "4GB RAM",
+                    "$1/GB RAM",
                     "Unlimited Player Slots",
-                    "Premium Plugins",
-                    "Modpack Support",
-                    "DDoS Protection",
-                    "Daily Backups"
+                    "Ryzen 9 7900 @ 3.7GHz",
+                    "1-click modpack and plugin installer",
+                    "Instant Setup"
                 ]
                 
             },
@@ -58,16 +57,15 @@
                 "name": "Diamond",
                 "icon": "gem",
                 "link": "https://client.host.com/plan/diamond",
-                "price": "30",
-                "ram": "12",
+                "price": "8",
+                "ram": "8",
                 "players": "∞",
                 "features": [
-                    "12GB RAM",
-                    "Unlimited Players",
-                    "All Plugins Included",
-                    "Priority Support",
-                    "Custom Domain",
-                    "Advanced Statistics"
+                    "$1/GB RAM",
+                    "Unlimited Player Slots",
+                    "Ryzen 9 7900 @ 3.7GHz",
+                    "1-click modpack and plugin installer",
+                    "Instant Setup"
                 ]
                 
             }
@@ -257,3 +255,4 @@
     }
 
 }
+
