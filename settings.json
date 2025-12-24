@@ -28,7 +28,7 @@
                 "ram": "1",
                 "players": "∞",
                 "features": [
-                    "$1/GB RAM",
+                    "1GB RAM",
                     "Unlimited Player Slots",
                     "Ryzen 9 7900 @ 3.7GHz",
                     "1-click modpack and plugin installer",
@@ -45,7 +45,7 @@
                 "players": "∞",
                 "featured": true,
                 "features": [
-                    "$1/GB RAM",
+                    "4GB RAM",
                     "Unlimited Player Slots",
                     "Ryzen 9 7900 @ 3.7GHz",
                     "1-click modpack and plugin installer",
@@ -61,7 +61,7 @@
                 "ram": "8",
                 "players": "∞",
                 "features": [
-                    "$1/GB RAM",
+                    "8GB RAM",
                     "Unlimited Player Slots",
                     "Ryzen 9 7900 @ 3.7GHz",
                     "1-click modpack and plugin installer",
@@ -255,5 +255,6 @@
     }
 
 }
+
 
 
