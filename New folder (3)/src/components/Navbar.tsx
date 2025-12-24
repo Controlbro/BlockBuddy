@@ -21,12 +21,11 @@ export default function Navbar() {
   }, []);
 
   const menuLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Rules', href: '/rules' },
-    { name: 'Store', href: '/store' },
-    { name: 'Staff', href: '/staff' },
-    { name: 'Vote', href: '/vote' },
-    { name: 'FAQ', href: '/faq' },
+    { name: 'Home', href: '#home' },
+    { name: 'Plans', href: '#plans' },
+    { name: 'Features', href: '#features' },
+    { name: 'Reviews', href: '#reviews' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -42,15 +41,13 @@ export default function Navbar() {
           </button>
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <a href="#" className="block font-bold text-3xl tracking-tight text-[#0F172A] hover:opacity-80 transition-opacity">
-              Moonveil
+              BlockBuddy
             </a>
           </div>
           <a
-            href="https://discord.gg/moonveil"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="p-2 -mr-2 text-[#0F172A] hover:text-[#5865F2] hover:bg-[#5865F2]/10 rounded-lg transition-all"
-            aria-label="Join Discord"
+            aria-label="Contact BlockBuddy"
           >
             <div className="w-7 h-7">
                <DiscordIcon />

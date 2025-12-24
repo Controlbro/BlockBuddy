@@ -5,45 +5,45 @@ import Button from '../components/ui/Button';
 
 const reviews = [
   {
-    quote: "Moonveil has completely changed my survival experience. The economy is perfectly balanced, and the community is super chill.",
-    author: "AlexSteve_99",
-    role: "Survival Expert",
-    handle: "@alexsteve",
+    quote: "BlockBuddy cut our load times in half. Moving our modded server over was painless.",
+    author: "Alex Rivera",
+    role: "Community Owner",
+    handle: "@alexrivera",
     avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100&auto=format&fit=crop"
   },
   {
-    quote: "Finally a server that doesn't feel pay-to-win. The custom enchants add so much depth to the PVP!",
-    author: "PvP_Master",
-    role: "Clan Leader",
-    handle: "@pvpmaster",
+    quote: "We launched a new SMP in under 10 minutes. The panel is clear and the pricing is fair.",
+    author: "Priya Das",
+    role: "Minecraft Admin",
+    handle: "@priyadas",
     avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100&auto=format&fit=crop"
   },
   {
-    quote: "The builds on this server are insane! I love the creative plots and the weekly contests. Staff is very helpful too.",
-    author: "BuilderBob",
-    role: "Architect",
-    handle: "@bob_builds",
+    quote: "Their DDoS protection is the real deal. We stayed online during a 20-minute attack.",
+    author: "Morgan Lee",
+    role: "Network Lead",
+    handle: "@morganlee",
     avatar: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=100&auto=format&fit=crop"
   },
   {
-    quote: "I've been playing Skyblock here for 3 months straight. The automation mechanics are addictive.",
-    author: "RedstonePro",
-    role: "Redstone Engineer",
-    handle: "@redstone_wiz",
+    quote: "The VPS performance is excellent for our bot services and web dashboards.",
+    author: "Jordan Kim",
+    role: "DevOps Engineer",
+    handle: "@jordankim",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop"
   },
   {
-    quote: "Best SMP experience in 2024. Period.",
-    author: "DiamondHunter",
-    role: "Veteran Player",
-    handle: "@dhunter",
+    quote: "Support gets back within minutes. You can tell they actually care.",
+    author: "Samira Hall",
+    role: "Server Moderator",
+    handle: "@samirahall",
     avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100&auto=format&fit=crop"
   },
   {
-    quote: "The layout and UI of the server store is clean, and receiving items is instant. Great infrastructure.",
-    author: "TechSavvy",
-    role: "Server Admin",
-    handle: "@tech_minecraft",
+    quote: "BlockBuddy is the first host that scales smoothly when we add more players.",
+    author: "Taylor Brooks",
+    role: "Event Organizer",
+    handle: "@taylorbrooks",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
   }
 ];
@@ -62,7 +62,7 @@ export default function Reviews() {
                 <XIcon />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy-900)]">
-                Community <span className="text-[var(--color-gold-500)]">Feedback</span>
+                Customer <span className="text-[var(--color-gold-500)]">Reviews</span>
             </h2>
             <div className="h-1 w-24 bg-blue-200 mt-4 rounded-full"></div>
         </div>

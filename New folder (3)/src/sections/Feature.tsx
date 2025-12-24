@@ -1,4 +1,4 @@
-import { Coins, ShoppingBag, Sparkles, Users } from 'lucide-react';
+import { Gauge, HardDrive, ShieldCheck, Wrench } from 'lucide-react';
 import feature1 from '../assets/feature/1.webp';
 import feature2 from '../assets/feature/2.webp';
 import feature3 from '../assets/feature/3.webp';
@@ -6,33 +6,33 @@ import feature4 from '../assets/feature/4.webp';
 
 const features = [
   {
-    icon: Coins,
-    title: 'Nested Economy',
-    description: 'Deeply integrated economy system allowing you to manage multiple currency streams contextually.',
+    icon: Gauge,
+    title: 'High-Performance Hardware',
+    description: 'Ryzen-powered CPUs and NVMe SSDs deliver low latency and fast chunk loading for every player.',
     image: feature1,
     color: "text-green-600",
     gradient: "from-green-200 to-green-100"
   },
   {
-    icon: ShoppingBag,
-    title: 'Global Market',
-    description: 'Expect 2–3× faster trading with our optimized GUI marketplace. Sell rare loot instantly.',
+    icon: ShieldCheck,
+    title: 'Always-On DDoS Defense',
+    description: 'Layer 4/7 mitigation keeps your worlds and services online, even during massive attacks.',
     image: feature2,
     color: "text-blue-600",
     gradient: "from-blue-200 to-blue-100"
   },
   {
-    icon: Sparkles,
-    title: 'Custom Enchants',
-    description: 'Enhance your gear with over 200+ unique enchantments populated from external custom data sources.',
+    icon: Wrench,
+    title: 'One-Click Modpacks',
+    description: 'Install popular modpacks and server jars in seconds with simple controls and automatic updates.',
     image: feature3,
     color: "text-purple-600",
     gradient: "from-purple-200 to-purple-100"
   },
   {
-    icon: Users,
-    title: 'Thriving Community',
-    description: 'The new community system adds support for guilds, clan wars, and temporary alliances.',
+    icon: HardDrive,
+    title: 'Automated Backups',
+    description: 'Nightly snapshots and instant restores protect your worlds, configs, and databases.',
     image: feature4,
     color: "text-orange-600",
     gradient: "from-orange-200 to-orange-100"
@@ -51,7 +51,7 @@ export default function Feature() {
              Introducing some
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-[var(--color-navy-900)]">
-             New <span className="font-black">Moonveil</span> Features!
+             Why <span className="font-black">BlockBuddy</span>?
           </h2>
         </div>
 
