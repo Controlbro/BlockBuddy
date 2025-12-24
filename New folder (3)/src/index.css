@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --- CORE COLORS --- */
+  --color-cream: #FFFBF0;
+  --color-navy-900: #0F172A;
+  --color-navy-800: #1E293B;
+  --color-gold-500: #F59E0B;
+  --color-gold-400: #FBBF24;
+  
+  /* --- SERVER CARD CONFIG --- */
+  --server-card-shadow: #1E293B; 
+  --server-card-border: #0F172A;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.text-navy {
+  color: var(--color-navy-900);
+}
+
+.text-navy-light {
+  color: var(--color-navy-800);
+}
+
+.text-gold {
+  color: var(--color-gold-500);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
