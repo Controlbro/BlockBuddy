@@ -52,6 +52,28 @@ app.get('/', (req, res) => {
         res.status(500).send('Error loading page');
     }
 });
+app.get('/web-hosting', (req, res) => {
+    try {
+        res.render('web-hosting', {
+            site: settings.site,
+            year: new Date().getFullYear()
+        });
+    } catch (error) {
+        console.error('Error rendering page:', error);
+        res.status(500).send('Error loading page');
+    }
+});
+app.get('/bot-hosting', (req, res) => {
+    try {
+        res.render('bot-hosting', {
+            site: settings.site,
+            year: new Date().getFullYear()
+        });
+    } catch (error) {
+        console.error('Error rendering page:', error);
+        res.status(500).send('Error loading page');
+    }
+});
 app.use((req, res) => {
     res.status(404).render('404', {
         site: settings.site,
