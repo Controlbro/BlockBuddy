@@ -182,40 +182,6 @@
         </div>
     </section>
 
-    <!-- Plans Section -->
-    <section id="plans" class="py-16 scroll-mt-20">
-        <div class="container mx-auto px-4">
-            <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Choose Your Plan</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <% site.plans.forEach(plan => { %>
-                    <div class="group bg-white/5 dark:bg-black/60 p-8 rounded-lg <%= plan.featured ? 'ring-2 ring-minecraft-gold transform scale-105' : '' %> hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-<%= plan.icon %> text-4xl mb-4 group-hover:text-minecraft-green transition-colors group-hover:animate-bounce-slow"></i>
-                            <h3 class="font-minecraft text-xl group-hover:text-minecraft-green transition-colors"><%= plan.name %> Plan</h3>
-                        </div>
-                        <div class="text-center mb-6">
-                            <span class="text-3xl font-bold group-hover:text-minecraft-green transition-colors">$<%= plan.price %></span>
-                            <span class="text-gray-400 dark:text-gray-500">/mo</span>
-                        </div>
-                        <ul class="space-y-4 mb-8">
-                            <% plan.features.forEach(feature => { %>
-                                <li class="flex items-center group/item">
-                                    <i class="fas fa-check text-minecraft-green mr-2 group-hover/item:animate-bounce"></i>
-                                    <span class="group-hover/item:text-minecraft-green transition-colors"><%= feature %></span>
-                                </li>
-                            <% }); %>
-                        </ul>
-                        <a href="<%= plan.link %>">
-                        <button class="w-full py-2 font-minecraft <%= plan.featured ? 'bg-minecraft-green hover:bg-green-600' : 'bg-gray-700 hover:bg-gray-600' %> transition-colors transform hover:scale-105"> 
-                            Select Plan
-                        </button>
-                        </a>
-                    </div>
-                <% }); %>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing Comparison Section -->
     <section class="py-16 bg-white/5 dark:bg-black/30">
         <div class="container mx-auto px-4">
@@ -716,3 +682,4 @@
     </script>
 </body>
 </html>
+
