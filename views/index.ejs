@@ -197,23 +197,21 @@
                             <i class="fas fa-<%= plan.icon %> text-4xl mb-4 group-hover:text-minecraft-green transition-colors group-hover:animate-bounce-slow"></i>
                             <h3 class="font-minecraft text-xl group-hover:text-minecraft-green transition-colors"><%= plan.name %> Plan</h3>
                         </div>
-                        <div class="text-center mb-6">
-                            <span class="text-3xl font-bold group-hover:text-minecraft-green transition-colors">$<%= plan.price %></span>
-                            <span class="text-gray-400 dark:text-gray-500">/mo</span>
+                        <div class="p-6 text-center lg:border-r border-white/10">Ryzen 5 5600X</div>
+                        <div class="p-6 text-center lg:border-r border-white/10">Ryzen 7 7700X or similar</div>
+                        <div class="p-6 text-center">Ryzen 9 9900X</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-4">
+                        <div class="p-6 flex items-center gap-3 lg:border-r border-white/10">
+                            <span class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-memory"></i>
+                            </span>
+                            <span class="font-minecraft">RAM</span>
                         </div>
-                        <ul class="space-y-4 mb-8">
-                            <% plan.features.forEach(feature => { %>
-                                <li class="flex items-center group/item">
-                                    <i class="fas fa-check text-minecraft-green mr-2 group-hover/item:animate-bounce"></i>
-                                    <span class="group-hover/item:text-minecraft-green transition-colors"><%= feature %></span>
-                                </li>
-                            <% }); %>
-                        </ul>
-                        <a href="<%= plan.link %>">
-                        <button class="w-full py-2 font-minecraft <%= plan.featured ? 'bg-minecraft-green hover:bg-green-600' : 'bg-gray-700 hover:bg-gray-600' %> transition-colors transform hover:scale-105"> 
-                            Select Plan
-                        </button>
-                        </a>
+                        <div class="p-6 text-center lg:border-r border-white/10">DDR4 @ 2666 MHz</div>
+                        <div class="p-6 text-center lg:border-r border-white/10">DDR5 @ 3600 MHz</div>
+                        <div class="p-6 text-center">DDR5 @ 3600 MHz</div>
                     </div>
                 <% }); %>
             </div>
@@ -785,3 +783,4 @@
     </script>
 </body>
 </html>
+
