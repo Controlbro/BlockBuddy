@@ -248,24 +248,39 @@
     </section>
 
     <!-- Other Hosting Options -->
-    <section class="py-10">
+    <section class="py-12">
         <div class="container mx-auto px-4">
-            <div class="bg-white/5 dark:bg-black/60 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div>
-                    <h2 class="font-minecraft text-2xl mb-2">Need Web or Bot Hosting?</h2>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Keep the main site Minecraft-focused while offering dedicated hosting pages.
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4">
+            <h2 class="font-minecraft text-3xl text-center mb-10 animate-minecraft-hover">Explore More Hosting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/5 dark:bg-black/60 border border-white/10 rounded-2xl p-6 md:p-8 flex items-center gap-6 hover:transform hover:scale-[1.02] transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-minecraft-blue/20 flex items-center justify-center">
+                        <i class="fas fa-globe text-2xl text-minecraft-blue"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-minecraft text-xl mb-1">Website Hosting</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                            $1.00/mo starter plan. Free with every server.
+                        </p>
+                    </div>
                     <a href="/web-hosting">
-                        <button class="px-6 py-2 font-minecraft bg-minecraft-green hover:bg-green-600 transition-colors transform hover:scale-105">
-                            Website Hosting
+                        <button class="px-5 py-2 font-minecraft bg-minecraft-green hover:bg-green-600 transition-colors transform hover:scale-105">
+                            View
                         </button>
                     </a>
+                </div>
+                <div class="bg-white/5 dark:bg-black/60 border border-white/10 rounded-2xl p-6 md:p-8 flex items-center gap-6 hover:transform hover:scale-[1.02] transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center">
+                        <i class="fab fa-discord text-2xl text-purple-300"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-minecraft text-xl mb-1">Discord Bot Hosting</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                            Free starter bot. Paid options from $1.49/mo.
+                        </p>
+                    </div>
                     <a href="/bot-hosting">
-                        <button class="px-6 py-2 font-minecraft bg-gray-700 hover:bg-gray-600 transition-colors transform hover:scale-105">
-                            Discord Bot Hosting
+                        <button class="px-5 py-2 font-minecraft bg-gray-700 hover:bg-gray-600 transition-colors transform hover:scale-105">
+                            View
                         </button>
                     </a>
                 </div>
@@ -285,11 +300,20 @@
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-4 text-center border-b border-white/10">
                     <div class="p-6 font-minecraft uppercase tracking-widest text-xs text-gray-400 lg:text-left">
-                        Plan Tier
+                        Feature
                     </div>
-                    <div class="p-6 bg-minecraft-green/10 font-minecraft text-minecraft-green">Budget</div>
-                    <div class="p-6 bg-minecraft-blue/10 font-minecraft text-minecraft-blue">Standard</div>
-                    <div class="p-6 bg-purple-500/10 font-minecraft text-purple-300">Performance</div>
+                    <div class="p-6 bg-minecraft-green/10">
+                        <div class="font-minecraft text-minecraft-green">Budget</div>
+                        <div class="text-xs text-gray-400">Friends & small worlds</div>
+                    </div>
+                    <div class="p-6 bg-minecraft-blue/10">
+                        <div class="font-minecraft text-minecraft-blue">Standard</div>
+                        <div class="text-xs text-gray-400">Modded & public servers</div>
+                    </div>
+                    <div class="p-6 bg-purple-500/10">
+                        <div class="font-minecraft text-purple-300">Performance</div>
+                        <div class="text-xs text-gray-400">Max performance</div>
+                    </div>
                 </div>
 
                 <div class="divide-y divide-white/10">
