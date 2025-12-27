@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= site.name %> - Website Hosting</title>
+    <link rel="icon" href="<%= site.logo %>" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        minecraft: ['Minecraft', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        minecraft: {
+                            green: '#44bd32',
+                            blue: '#3498db',
+                            gold: '#f1c40f',
+                            dark: '#1e272e',
+                            light: '#ecf0f1',
+                        },
+                    },
+                },
+            },
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-minecraft-light dark:bg-minecraft-dark text-gray-800 dark:text-white font-inter transition-colors duration-300">
+    <button 
+        onclick="toggleTheme()"
+        class="fixed bottom-4 right-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+    >
+        <i class="fas fa-sun dark:hidden text-yellow-500 text-xl"></i>
+        <i class="fas fa-moon hidden dark:block text-blue-400 text-xl"></i>
+    </button>
+
+    <nav class="fixed w-full bg-white/80 dark:bg-black/80 backdrop-blur-sm z-40 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="<%= site.logo %>" alt="<%= site.name %>" class="w-8 h-8">
+                    <span class="font-minecraft text-xl"><%= site.name %></span>
+                </div>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="/" class="font-minecraft hover:text-minecraft-green transition">Minecraft Hosting</a></li>
+                    <li><a href="/web-hosting" class="font-minecraft hover:text-minecraft-green transition">Web Hosting</a></li>
+                    <li><a href="/bot-hosting" class="font-minecraft hover:text-minecraft-green transition">Bot Hosting</a></li>
+                </ul>
+                <div class="hidden md:flex space-x-4">
+                    <button class="px-4 py-2 font-minecraft bg-gray-700 hover:bg-gray-600 transition shadow-inner">
+                        <a href="<%= site.login_url %>">Login</a>
+                    </button>
+                    <button class="px-4 py-2 font-minecraft bg-minecraft-green hover:bg-green-600 transition shadow-inner">
+                        <a href="<%= site.start_server_url %>">Start Server</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-28 pb-16 bg-[url('/images/minecraft_bg.png')] bg-cover bg-center relative">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-flex items-center bg-black/60 px-4 py-2 rounded-lg mb-6">
+                <i class="fas fa-globe text-minecraft-blue mr-2"></i>
+                <span class="font-minecraft">Website Hosting</span>
+            </div>
+            <h1 class="font-minecraft text-4xl md:text-6xl mb-6">Launch Your Website Fast</h1>
+            <p class="max-w-2xl mx-auto text-gray-200">
+                Get a full DirectAdmin stack with everything you need to launch a site. Free with every Minecraft server plan.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white/5 dark:bg-black/60 p-10 rounded-2xl border border-white/10 shadow-xl">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                    <div>
+                        <h2 class="font-minecraft text-3xl mb-3">Starter Website Plan</h2>
+                        <p class="text-gray-600 dark:text-gray-300">Perfect for landing pages, communities, and small projects.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-minecraft-green">$1.00</div>
+                        <div class="text-gray-400 dark:text-gray-500">/mo</div>
+                        <button class="mt-4 w-full md:w-auto px-8 py-2 font-minecraft bg-minecraft-green hover:bg-green-600 transition-colors transform hover:scale-105">
+                            Order Website Hosting
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 text-sm text-gray-600 dark:text-gray-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>1 Domain / Website</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>5GB Disk / Storage</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>2 SQL Databases</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>Unlimited Email Address</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>Unlimited Subdomains</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>1 Parked Domain</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>1/2TB Bandwidth</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-minecraft-green"></i>DirectAdmin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white/5 dark:bg-black/20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-minecraft text-3xl mb-6">Ready to start?</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                Bundle website hosting for free with any Minecraft server plan.
+            </p>
+            <a href="/#plans">
+                <button class="px-8 py-4 font-minecraft bg-minecraft-green hover:bg-green-600 transition-colors rounded-lg transform hover:scale-105">
+                    View Minecraft Plans
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-white/10 dark:bg-black/80 pt-16 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="group">
+                    <h3 class="font-minecraft text-xl mb-4 group-hover:text-minecraft-green transition-colors"><%= site.name %></h3>
+                    <p class="text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-white transition-colors"><%= site.description %></p>
+                </div>
+                <div class="group">
+                    <h4 class="font-minecraft text-lg mb-4 group-hover:text-minecraft-green transition-colors">Contact</h4>
+                    <p class="flex items-center mb-2 hover:text-minecraft-blue transition-colors">
+                        <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
+                        <%= site.contact.email %>
+                    </p>
+                    <p class="flex items-center hover:text-minecraft-blue transition-colors">
+                        <i class="fas fa-phone mr-2 group-hover:animate-bounce"></i>
+                        <%= site.contact.phone %>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-gray-800">
+                <p class="text-gray-600 dark:text-gray-400">&copy; <%= year %> <%= site.name %> - All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+    </script>
+</body>
+</html>
