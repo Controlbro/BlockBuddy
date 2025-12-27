@@ -293,30 +293,34 @@
         <div class="container mx-auto px-4">
             <h2 class="font-minecraft text-3xl text-center mb-12 animate-minecraft-hover">Plan Comparison</h2>
             <div class="bg-white/5 dark:bg-black/60 rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
-                <div class="p-6 border-b border-white/10">
-                    <p class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Compare hardware and perks across tiers to pick the best plan for your world.
-                    </p>
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 p-6 border-b border-white/10">
+                    <div class="p-6 rounded-xl bg-white/5 dark:bg-black/50 border border-white/10">
+                        <h3 class="font-minecraft text-2xl mb-3">Need some help picking plans?</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Which server hardware is best for your Minecraft Server?
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gradient-to-b from-minecraft-green/20 to-black/40 border border-minecraft-green/40 text-center">
+                        <h4 class="font-minecraft text-2xl text-minecraft-green mb-3">Budget</h4>
+                        <p class="text-gray-300 text-sm">
+                            Ideal for playing with a group of friends or small projects
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gradient-to-b from-minecraft-blue/20 to-black/40 border border-minecraft-blue/40 text-center">
+                        <h4 class="font-minecraft text-2xl text-minecraft-blue mb-3">Standard</h4>
+                        <p class="text-gray-300 text-sm">
+                            Ideal for modded servers with many players or public servers
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gradient-to-b from-purple-500/20 to-black/40 border border-purple-500/40 text-center">
+                        <h4 class="font-minecraft text-2xl text-purple-300 mb-3">Performance</h4>
+                        <p class="text-gray-300 text-sm">
+                            For when you need every last drop of performance
+                        </p>
+                    </div>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[900px] text-sm">
-                        <thead class="border-b border-white/10">
-                            <tr class="text-left">
-                                <th class="p-6 font-minecraft uppercase tracking-widest text-xs text-gray-400">Feature</th>
-                                <th class="p-6 text-center bg-minecraft-green/10">
-                                    <div class="font-minecraft text-minecraft-green">Budget</div>
-                                    <div class="text-xs text-gray-400">Friends & small worlds</div>
-                                </th>
-                                <th class="p-6 text-center bg-minecraft-blue/10">
-                                    <div class="font-minecraft text-minecraft-blue">Standard</div>
-                                    <div class="text-xs text-gray-400">Modded & public servers</div>
-                                </th>
-                                <th class="p-6 text-center bg-purple-500/10">
-                                    <div class="font-minecraft text-purple-300">Performance</div>
-                                    <div class="text-xs text-gray-400">Max performance</div>
-                                </th>
-                            </tr>
-                        </thead>
                         <tbody class="divide-y divide-white/10">
                             <tr>
                                 <td class="p-6">
